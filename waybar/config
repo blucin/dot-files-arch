@@ -9,7 +9,7 @@
         "clock"
     ],
     "modules-right": [
-        "cava",
+        "tray",
         "network#2",
         "pulseaudio",
         "network",
@@ -122,6 +122,10 @@
         ],
         "actions": {
             "on-click-right": "mode"
+        },
+        "tray": {
+            "icon-size": 21,
+            "spacing": 10
         }
     }
 }

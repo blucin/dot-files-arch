@@ -5,6 +5,13 @@
 
 lvim.colorscheme = "catppuccin-macchiato"
 
+-- global options
+vim.g.vimtex_view_method = "zathura"
+vim.g.vimtex_view_general_viewer = "zathura"
+vim.g.vimtex_view_general_options = "--unique file:@pdf\027#src:@line@tex"
+vim.g.tex_flavor = "latex"
+vim.g.copilot_filetypes = {markdown = true} -- false by default
+
 -- Setters
 vim.opt.relativenumber = true
 
@@ -38,7 +45,10 @@ lvim.plugins = {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     }
-  }, 
+  },{
+    "lervag/vimtex",
+    ft = "tex",
+  },
   { "lunarvim/colorschemes" },
   { "catppuccin/nvim" },
 }

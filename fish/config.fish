@@ -13,4 +13,5 @@ end
 set VISUAL lvim
 set EDITOR lvim
 set fish_greeting
+set -Ux ANDROID_HOME $HOME/Android/Sdk
 starship init fish | source

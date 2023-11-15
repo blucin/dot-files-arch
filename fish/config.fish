@@ -8,6 +8,10 @@ alias ltttt="exa --tree -D -L 5 -I 'ache|log|logs|node_modules|vendor' --icons"
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    
+    # auto start tmux 
+    # tmux attach -t default || tmux new -s default
+    
 end
 
 function starship_transient_prompt_func

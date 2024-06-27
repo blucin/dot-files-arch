@@ -12,7 +12,7 @@
 
 ## Getting Started
 
-> Make sure sway-fx (AUR) with a display manager optionally (sddm) is installed.
+> **Make sure sway-fx (AUR) with a display manager optionally (sddm) is installed.**
 
 1. Clone the repo
 
@@ -45,12 +45,18 @@ nemo-fileroller pacman-contrib ufw
 
 4. Stow all the dot files (Make sure you clone the repo in $HOME)
 
-    - ```bash
-        stow sway
-        stow fastfetch
-        stow alacritty
-        ...
-      ```
+```bash
+    stow .
+```
+
+**or** manually add each configuration as required
+
+```bash
+    stow sway
+    stow fastfetch
+    stow alacritty
+    ...
+```
 
 > This will automatically symlink the config files
 

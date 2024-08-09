@@ -1,18 +1,12 @@
 # dot-files-arch (WIP)
 
 ![homescreen-screenshot](./assets/screenshot.png)
+> Old screenshot with sway
 
-## TODO: 
-- [ ] Waybar for system bar
-- [ ] Clipman for clipboard
-- [ ] On screen display for volume and brightness level preview
-- [ ] Proper XDG variables and system environments
-- [ ] Fix flameshot not working (probably due to the above TODO)
-- [ ] Introduce lvim config and delete nvim dot files repo
+## TODO:
+- [ ] Update repo with kde dot files
 
 ## Getting Started
-
-> **Make sure sway-fx (AUR) with a display manager optionally (sddm) is installed.**
 
 1. Clone the repo
 
@@ -24,23 +18,20 @@ cd ~/.dotfiles
 
 2. Install necessary fonts
     - `ttf-iosevka-nerd`
+    - `monaspace-font`
+
+3. Install `neovim` and [`lunarvim`](https://www.lunarvim.org/)
 
 3. Install necessary dependencies
 
 ```
-swaylock swayidle swaybg swaync stow alacritty flameshot waybar btop wl-clipboard nemo xdg-desktop-portal xdg-desktop-portal-wlr grim slurp gnome-keyring polkit-gnome fish nemo fastfetch
-```
-
-AUR
-
-```
-clipman
+stow alacritty btop fish fastfetch
 ```
 
 Some additional packages that I use
 
 ```
-nemo-fileroller pacman-contrib ufw 
+pacman-contrib ufw lazygit
 ```
 
 4. Stow all the dot files (Make sure you clone the repo in $HOME)
@@ -52,7 +43,7 @@ nemo-fileroller pacman-contrib ufw
 **or** manually add each configuration as required
 
 ```bash
-    stow sway
+    stow lvim
     stow fastfetch
     stow alacritty
     ...

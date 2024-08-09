@@ -1,0 +1,21 @@
+[env]
+TERM = "xterm-256color"
+
+[shell]
+program="/bin/fish"
+# args = ["-l", "-c", "tmux"]
+
+[font]
+# normal={family="Monaspace Neon", style="Medium"}
+normal= {family="Monaspace Radon"} 
+size=12
+
+[window]
+# padding={x=10,y=3}
+decorations="Buttonless"
+dynamic_padding=false
+opacity=0.95
+blur=true
+
+[selection]
+save_to_clipboard = true

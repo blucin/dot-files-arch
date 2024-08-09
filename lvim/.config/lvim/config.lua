@@ -3,7 +3,7 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
-lvim.colorscheme = "sweet-fusion"
+lvim.colorscheme = "github_dark"
 
 vim.g.copilot_filetypes = { markdown = true } -- false by default
 vim.opt.guifont = "Iosevka:h17"
@@ -12,15 +12,25 @@ lvim.keys.normal_mode["|"] = ":vsplit<CR>"
 lvim.keys.normal_mode["-"] = ":split<CR>"
 -- lvim.transparent_window = true
 
+-- lsp overrides (run :LvimCacheReset after adding an entry here)
+-- 1. Use tinymist over typst-lsp
+-- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "typst-lsp", "typst_lsp", "typst" })
+-- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(
+--   function(server)
+--     return server ~= "tinymist"
+--   end,
+--   lvim.lsp.automatic_configuration.skipped_servers)
+
+
 lvim.plugins = {
   {
     "catppuccin/nvim",
     lazy = false,
     name = "catppuccin",
     -- priority = 1000,
-    config = function()
-      vim.cmd.colorscheme "catppuccin-mocha"
-    end
+    -- config = function()
+    --   vim.cmd.colorscheme "catppuccin-mocha"
+    -- end
   },
   {
     "zbirenbaum/copilot.lua",
@@ -49,6 +59,21 @@ lvim.plugins = {
     "zbirenbaum/copilot-cmp",
     config = function()
       require("copilot_cmp").setup()
+    end
+  },
+  {
+    "kevinhwang91/nvim-hlslens",
+    config = function()
+      require("hlslens").setup()
+    end
+  },
+  {
+    "petertriho/nvim-scrollbar",
+    dependencies = {
+      "kevinhwang91/nvim-hlslens",
+    },
+    config = function()
+      require("scrollbar").setup()
     end
   },
   {
@@ -108,8 +133,40 @@ lvim.plugins = {
       }
     end
   },
+  {
+    "kawre/leetcode.nvim",
+    build = ":TSUpdate html",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",   -- required by telescope
+      "MunifTanjim/nui.nvim",
+
+      -- optional
+      "nvim-treesitter/nvim-treesitter",
+      "rcarriga/nvim-notify",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      -- configuration goes here
+      lang = "python3",
+    },
+  },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl",  opts = {} },
-  { "justinmk/vim-sneak" },
+  -- { "justinmk/vim-sneak" }, -- replaced by leap
+  { 
+    "ggandor/leap.nvim",
+    name = "leap",
+    config = function()
+      require("leap").add_default_mappings()
+      -- Define equivalence classes for brackets and quotes, in addition to
+      -- the default whitespace group.
+      require('leap').opts.equivalence_classes = { ' \t\r\n', '([{', ')]}', '\'"`' }
+
+      -- Use the traversal keys to repeat the previous motion without explicitly
+      -- invoking Leap.
+      require('leap.user').set_repeat_keys('<enter>', '<backspace>')
+    end
+  },
   { "xiyaowong/transparent.nvim" },
   { "ellisonleao/glow.nvim",               config = true, cmd = "Glow" },
 }

@@ -3,9 +3,6 @@
 ![homescreen-screenshot](./assets/screenshot.png)
 > Old screenshot with sway
 
-## TODO:
-- [ ] Update repo with kde dot files
-
 ## Getting Started
 
 1. Clone the repo
@@ -17,16 +14,17 @@ cd ~/.dotfiles
 ```
 
 2. Install necessary fonts
-    - `ttf-iosevka-nerd`
-    - `monaspace-font`
+    - `ttf-jetbrains-mono-nerd`
 
 3. Install `neovim` and [`lunarvim`](https://www.lunarvim.org/)
 
 3. Install necessary dependencies
 
 ```
-stow alacritty btop fish fastfetch
+stow alacritty btop fish fastfetch i3 polybar network-manager-applet
 ```
+
+> grab all the members of the package i3 `i3-wm`, `i3blocks`, `i3lock`, `i3status`
 
 Some additional packages that I use
 
@@ -43,6 +41,7 @@ pacman-contrib ufw lazygit
 **or** manually add each configuration as required
 
 ```bash
+    stow i3
     stow lvim
     stow fastfetch
     stow alacritty

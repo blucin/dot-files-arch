@@ -1,7 +1,6 @@
 # dot-files-arch (WIP)
 
 ![homescreen-screenshot](./assets/screenshot.png)
-> Old screenshot with sway
 
 ## Getting Started
 

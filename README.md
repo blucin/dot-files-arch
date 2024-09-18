@@ -31,7 +31,14 @@ Some additional packages that I use
 pacman-contrib ufw lazygit
 ```
 
-4. Stow all the dot files (Make sure you clone the repo in $HOME)
+4. Make sure that the scripts under `~/.dotfiles/scripts/` are executable
+
+```bash
+ls -l ~/.dotfiles/scripts/
+chmod +x ~/.dotfiles/scripts/*
+```
+
+5. Stow all the dot files (Make sure you clone the repo in $HOME)
 
 ```bash
     stow .

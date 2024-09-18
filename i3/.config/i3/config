@@ -25,7 +25,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # CopyQ: A clipboard manager
-exec --no-startup-id copyq
+exec --no-startup-id sleep 5; copyq
 
 # Nitrogen A Wallpaper Manager - restore last wallpaper
 exec --no-startup-id nitrogen --restore
@@ -61,10 +61,11 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec $term
 bindsym $mod+Ctrl+E exec $explorer
 bindsym $mod+Ctrl+B exec $browser
-bindsym $mod+q exec ~/.local/bin/vimeditnew --class __text_scratchpad
+bindsym $mod+q exec ~/.local/bin/vimedit --class __text_scratchpad
 for_window [instance="__text_scratchpad"] floating enable
 bindsym $mod+Shift+S exec ksnip -r
 for_window [title="ksnip - Unsaved"] move scratchpad
+bindsym $mod+Shift+D exec --no-startup-id ~/.local/bin/dunst_toggle.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill

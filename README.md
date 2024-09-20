@@ -20,7 +20,7 @@ cd ~/.dotfiles
 3. Install necessary dependencies
 
 ```
-stow alacritty btop fish fastfetch i3 polybar network-manager-applet zellij rofi qt5ct qt6ct lxappearance kvantum nwg-appearance
+stow alacritty btop fish fastfetch i3 polybar network-manager-applet zellij rofi qt5ct qt6ct lxappearance kvantum nwg-appearance kvantum-qt5
 ```
 > [!IMPORTANT] 
 > grab all the members of the package i3 `i3-wm`, `i3blocks`, `i3lock`, `i3status`
@@ -28,7 +28,7 @@ stow alacritty btop fish fastfetch i3 polybar network-manager-applet zellij rofi
 Some additional packages that I use
 
 ```
-pacman-contrib ufw lazygit thunar thunar-media-tags-plugin thunar-volman xarchiver zip keepassxc
+pacman-contrib ufw lazygit thunar thunar-archive-plugin gvfs gvfs-google thunar-media-tags-plugin thunar-volman xarchiver zip keepassxc ristretto
 ```
 
 4. Make sure that the scripts under `~/.dotfiles/scripts/` are executable
@@ -60,7 +60,7 @@ chmod +x ~/.dotfiles/scripts/*
 6. Set some environment variables
 
 ```conf
-QT_QPA_PLATFORMTHEME=qt5ct:qt6ct
+QT_QPA_PLATFORMTHEME=qt5ct
 XDG_CONFIG_HOME=/home/blucin/.config
 ```
 > [!IMPORTANT]  
@@ -72,13 +72,22 @@ XDG_CONFIG_HOME=/home/blucin/.config
 | ----- | ----------- |
 | Icon theme | Fluent Icon Pack |
 | GTK theme | Adwaita Dark |
-| QT theme  | KvGnomeDark |
+| Kvantum theme | KvGnomeDark |
+| Qt6 theme | kvantum-dark |
+| Qt5 theme | kvantum-dark |
 
 > [!NOTE]
 > Use `nwg-appearance` and `lx-apperance` to set gtk-themes
 
 > [!NOTE]
 > Use `kvantum manager`, `qt5ct`, and `qt6ct` to set qt-themes
+
+> [!IMPORTANT]
+> For qt5 applications you need `kvantum-qt5` for `qt5ct` to detect kvantum themes
+
+> [!IMPORTANT]
+> For qt5 applications you need `qt5-styleplugins` from AUR for `qt5ct` to detect more themes
+> `stow xdg-desktop-portal` or create `~/.config/xdg-desktop-portal/portals.conf` with
 
 > [!IMPORTANT]
 > For gtk 4.0 apps to pick up dark mode and theme

@@ -18,7 +18,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color=000000
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -38,7 +38,7 @@ exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Adwait
 exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
 # Colors - i3
-set $primary #b4befe
+set $primary #FFC799
 set $background #000000
 set $text #ffffff
 
@@ -76,12 +76,18 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Jetbrains Mono Nerd Font:11'
-bindsym $mod+d exec --no-startup-id rofi -show drun
+# bindsym $mod+d exec --no-startup-id rofi -show drun
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show drun -theme $HOME/.config/rofi/config.rasi
+
+# start rofi (a powermenu launcher)
+bindsym $mod+BackSpace exec --no-startup-id ~/.config/rofi/powermenu.sh
 
 # change focus
 bindsym $mod+h focus left

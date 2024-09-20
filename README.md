@@ -57,16 +57,7 @@ chmod +x ~/.dotfiles/scripts/*
 > [!NOTE]
 > This will automatically symlink the config files
 
-6. Set some environment variables
-
-```conf
-QT_QPA_PLATFORMTHEME=qt5ct
-XDG_CONFIG_HOME=/home/blucin/.config
-```
-> [!IMPORTANT]  
-> **ENTER THE ABSOLUTE PATH TO THE HOME DIRECTORY, AS $HOME WILL BE DEFINED LATER ON**
-
-## Other Theming
+## Setting GTK and Qt themes
 
 | Name | Description |
 | ----- | ----------- |
@@ -76,29 +67,27 @@ XDG_CONFIG_HOME=/home/blucin/.config
 | Qt6 theme | kvantum-dark |
 | Qt5 theme | kvantum-dark |
 
-> [!NOTE]
-> Use `nwg-appearance` and `lx-apperance` to set gtk-themes
+- Set some environment variables in `etc/environment`
 
-> [!NOTE]
-> Use `kvantum manager`, `qt5ct`, and `qt6ct` to set qt-themes
-
-> [!IMPORTANT]
-> For qt5 applications you need `kvantum-qt5` for `qt5ct` to detect kvantum themes
-
-> [!IMPORTANT]
-> For qt5 applications you need `qt5-styleplugins` from AUR for `qt5ct` to detect more themes
-> `stow xdg-desktop-portal` or create `~/.config/xdg-desktop-portal/portals.conf` with
-
-> [!IMPORTANT]
-> For gtk 4.0 apps to pick up dark mode and theme
-> `stow xdg-desktop-portal` or create `~/.config/xdg-desktop-portal/portals.conf` with
-
- ```conf
-[preferred]
-default=gtk;wlr
+```conf
+QT_QPA_PLATFORMTHEME=qt5ct
+XDG_CONFIG_HOME=/home/blucin/.config
 ```
 
 > [!NOTE]
-> If it does not work set GTK_THEME variable manually in /etc/environment
+> 1. Use `nwg-appearance` and `lx-apperance` to set gtk-themes
+> 2. Use `kvantum manager`, `qt5ct`, and `qt6ct` to set qt-themes
+
+> [!IMPORTANT]
+> 1. Enter absolute path for `XDG_CONFIG_HOME` in `/etc/environment`
+> 2. For qt5 applications you need `kvantum-qt5` for `qt5ct` to detect kvantum themes
+> 3. For qt5 applications you need `qt5-styleplugins` from AUR for `qt5ct` to detect more themes
+> `stow xdg-desktop-portal` or create `~/.config/xdg-desktop-portal/portals.conf` with
+> 4. For gtk 4.0 apps to pick up dark mode and theme
+> `stow xdg-desktop-portal` or create `~/.config/xdg-desktop-portal/portals.conf` with. If it does not work, set the theme manually using `GTK_THEME` variable in `/etc/environment`
+> ```conf
+> [preferred]
+> default=gtk;wlr
+> ```
 
 

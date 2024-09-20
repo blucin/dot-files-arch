@@ -81,9 +81,7 @@ XDG_CONFIG_HOME=/home/blucin/.config
 > [!IMPORTANT]
 > 1. Enter absolute path for `XDG_CONFIG_HOME` in `/etc/environment`
 > 2. For qt5 applications you need `kvantum-qt5` for `qt5ct` to detect kvantum themes
-> 3. For qt5 applications you need `qt5-styleplugins` from AUR for `qt5ct` to detect more themes
-> `stow xdg-desktop-portal` or create `~/.config/xdg-desktop-portal/portals.conf` with
-> 4. For gtk 4.0 apps to pick up dark mode and theme
+> 3. For gtk 4.0 apps to pick up dark mode and theme
 > `stow xdg-desktop-portal` or create `~/.config/xdg-desktop-portal/portals.conf` with. If it does not work, set the theme manually using `GTK_THEME` variable in `/etc/environment`
 > ```conf
 > [preferred]

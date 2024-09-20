@@ -33,6 +33,10 @@ exec --no-startup-id nitrogen --restore
 # Polybar: A status bar for X11
 exec --no-startup-id ~/.config/polybar/launch_polybar.sh
 
+# Tell gtk-4.0 to use the dark theme
+exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
 # Colors - i3
 set $primary #b4befe
 set $background #000000

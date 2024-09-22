@@ -76,10 +76,13 @@ bindsym $mod+Shift+D exec --no-startup-id ~/.local/bin/dunst_toggle.sh
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -theme $HOME/.config/rofi/config.rasi
+bindsym $mod+d exec --no-startup-id rofi -show drun -theme ~/.config/rofi/launcher/config.rasi
 
 # start rofi (a powermenu launcher)
-bindsym $mod+BackSpace exec --no-startup-id ~/.config/rofi/powermenu.sh
+bindsym $mod+BackSpace exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
+
+# start rofi (a media controller)
+bindsym $mod+m exex --no-startup-id ~/.config/rofi/mpd/mpd.sh
 
 # change focus
 bindsym $mod+h focus left

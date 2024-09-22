@@ -14,13 +14,14 @@ cd ~/.dotfiles
 
 2. Install necessary fonts
     - `ttf-jetbrains-mono-nerd`
+    - `ttf-icomoon-feather`
 
 3. Install `neovim` and [`lunarvim`](https://www.lunarvim.org/)
 
 3. Install necessary dependencies
 
 ```
-stow alacritty btop fish fastfetch i3 polybar network-manager-applet zellij rofi qt5ct qt6ct lxappearance kvantum nwg-appearance kvantum-qt5
+stow alacritty btop fish fastfetch i3 polybar network-manager-applet zellij rofi qt5ct qt6ct lxappearance kvantum nwg-appearance kvantum-qt5 playerctl
 ```
 > [!IMPORTANT] 
 > grab all the members of the package i3 `i3-wm`, `i3blocks`, `i3lock`, `i3status`
@@ -28,7 +29,7 @@ stow alacritty btop fish fastfetch i3 polybar network-manager-applet zellij rofi
 Some additional packages that I use
 
 ```
-pacman-contrib ufw lazygit thunar thunar-archive-plugin gvfs gvfs-google thunar-media-tags-plugin thunar-volman xarchiver zip keepassxc ristretto
+pacman-contrib ufw lazygit thunar thunar-archive-plugin gvfs gvfs-google thunar-media-tags-plugin thunar-volman xarchiver zip keepassxc ristretto bat
 ```
 
 4. Make sure that the scripts under `~/.dotfiles/scripts/` are executable

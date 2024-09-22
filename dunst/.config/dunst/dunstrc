@@ -55,15 +55,15 @@
 [urgency_low]
     background = "#101010"
     foreground = "#f8f8f6"
-    frame_color = "#b4befe"
+    frame_color = "#ffc799"
     timeout = 5
 [urgency_normal]
     background = "#101010"
     foreground = "#f8f8f6"
-    frame_color = "#b4befe"
+    frame_color = "#ffc799"
     timeout = 5
 [urgency_critical]
     background = "#101010"
     foreground = "#f8f8f6"
-    frame_color = "#b4befe"
+    frame_color = "#ffc799"
     timeout = 120

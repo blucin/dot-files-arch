@@ -10,6 +10,13 @@ vim.opt.guifont = "Iosevka:h17"
 vim.opt.relativenumber = true
 lvim.keys.normal_mode["|"] = ":vsplit<CR>"
 lvim.keys.normal_mode["-"] = ":split<CR>"
+
+-- prefer tabs over spaces of 4 character indents
+vim.opt.softtabstop = 0
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
 -- lvim.transparent_window = true
 
 -- lsp overrides (run :LvimCacheReset after adding an entry here)

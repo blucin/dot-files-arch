@@ -10,7 +10,7 @@ set $browser io.github.zen_browser.zen
 font pango:JetBrainsMono Nerd Font Mono Medium 11
 
 # Display Refresh Rate
-exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 74.97
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --rate 74.97
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart

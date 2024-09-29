@@ -29,7 +29,7 @@ stow alacritty btop fish fastfetch i3 polybar network-manager-applet zellij rofi
 Some additional packages that I use
 
 ```
-pacman-contrib ufw lazygit thunar thunar-archive-plugin gvfs gvfs-google thunar-media-tags-plugin thunar-volman xarchiver zip keepassxc ristretto bat
+pacman-contrib ufw lazygit thunar thunar-archive-plugin gvfs thunar-media-tags-plugin thunar-volman xarchiver zip keepassxc ristretto bat
 ```
 
 4. Make sure that the scripts under `~/.dotfiles/scripts/` are executable

@@ -1,5 +1,24 @@
+'''
+A python script to update the discord theme system24
+
+Why?
+@import url(...) themes causes a lot of lag on discord
+because it has to fetch the theme before displaying text messages
+
+This leads to a blocking of the text messages until the discord
+fetches the theme
+
+What does this script do?
+Expands the import url(...) theme
+'''
+import requests
+
+def getThemeStr(url):
+    return requests.get(url).text
+
+theme_top_str = """
 /**
- * @name system24
+ * @name raw_system24_nofetch
  * @description A tui-style discord theme.
  * @author refact0r
  * @version 1.0.0
@@ -9,17 +28,18 @@
  * @authorId 508863359777505290
  * @authorLink https://www.refact0r.dev
 */
+"""
 
-/* import theme modules */
-@import url('https://refact0r.github.io/system24/src/main.css'); /* main theme css. DO NOT REMOVE */
+theme_mid_str = getThemeStr("https://refact0r.github.io/system24/src/main.css")
 
+theme_bottom_str = """
 /* customize things here */
 :root {
 	--font: 'JetBrains Mono'; /* UI font name. it must be installed on your system. */
 	letter-spacing: -0.12ch; /* decreases letter spacing for better readability. */
 	font-weight: 400; /* UI font weight. */
 	--label-font-weight: 500; /* font weight for panel labels. */
-	--corner-text: 'blucin'; /* custom text to display in the corner. only works on windows. */
+	--corner-text: 'system24'; /* custom text to display in the corner. only works on windows. */
 	--pad: 10px; /* padding between panels. */
 	--txt-pad: 5px; /* padding inside panels to prevent labels from clipping */
 	--panel-roundness: 0px; /* corner roundness of panels. ONLY WORKS IF unrounding.css IS REMOVED (see above). */
@@ -87,3 +107,12 @@
 	--vesper-yellow-2: oklch(66.89% 0.0877463272562663 60.67946389413653);
 	--vesper-green: oklch(93% 0.103 175.07);
 }
+"""
+
+with open("raw_system24.theme.css", "w") as f:
+    f.write(theme_top_str)
+    f.write(theme_mid_str)
+    f.write(theme_bottom_str)
+    f.close()
+
+

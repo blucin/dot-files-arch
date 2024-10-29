@@ -38,8 +38,10 @@ exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Adwait
 exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 
 # Colors - i3
-set $primary    #FFC799
-set $secondary  #99FFE4
+#set $primary    #FFC799
+#set $secondary  #99FFE4
+set $primary    #82CFFF
+set $secondary  #FF7EB6
 set $background #000000
 set $text       #FFFFFF
 

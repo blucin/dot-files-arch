@@ -18,7 +18,7 @@
     padding = 24
     horizontal_padding = 16
     text_icon_padding = 0
-    frame_width = 2 # border width
+    frame_width = 3
     separator_color = auto
     sort = yes
     idle_threshold = 0
@@ -50,20 +50,23 @@
     mouse_left_click = close_current
     mouse_right_click = do_action, close_current
     mouse_middle_click = close_all
+
 [experimental]
     per_monitor_dpi = false
+
 [urgency_low]
     background = "#101010"
     foreground = "#f8f8f6"
-    frame_color = "#ffc799"
     timeout = 5
+
 [urgency_normal]
     background = "#101010"
     foreground = "#f8f8f6"
-    frame_color = "#ffc799"
+    frame_color = "#42BE65"
     timeout = 5
+
 [urgency_critical]
     background = "#101010"
     foreground = "#f8f8f6"
-    frame_color = "#ffc799"
+    frame_color = "#E34234"
     timeout = 120

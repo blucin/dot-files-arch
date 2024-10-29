@@ -14,10 +14,15 @@ update_hooks() {
   done
 }
 
-# Get the currently playing title
+# Get the currently playing title with a 36-character limit
 current_title() {
     if [[ "$player_status" == "Playing" ]]; then
-        playerctl -p $players metadata --format '{{ artist }} - {{ title }}'
+        full_title=$(playerctl -p $players metadata --format '{{ artist }} - {{ title }}')
+        if [[ ${#full_title} -gt 36 ]]; then
+            echo "${full_title:0:33}..."  # Truncate and add ellipsis if longer than 36 characters
+        else
+            echo "$full_title"
+        fi
     else
         echo "No music playing"
     fi

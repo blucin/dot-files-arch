@@ -88,6 +88,9 @@ bindsym $mod+BackSpace exec --no-startup-id ~/.config/rofi/powermenu/powermenu.s
 # start rofi (a media controller)
 bindsym $mod+m exex --no-startup-id ~/.config/rofi/mpd/mpd.sh
 
+# start rofi (a window switcher)
+bindsym $mod+Tab exec --no-startup-id rofi -show window -theme ~/.config/rofi/launcher/config.rasi
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down

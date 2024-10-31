@@ -73,6 +73,8 @@ for_window [instance="__text_scratchpad"] floating enable
 bindsym $mod+Shift+S exec ksnip -r
 for_window [title="ksnip - Unsaved"] move scratchpad
 bindsym $mod+Shift+D exec --no-startup-id ~/.local/bin/dunst_toggle.sh
+for_window [title="KRuler — KDE Screen Ruler"] floating enable
+bindsym $mod+Shift+U exec kruler
 
 # kill focused window
 bindsym $mod+Shift+q kill

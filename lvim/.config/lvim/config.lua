@@ -2,7 +2,7 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
-lvim.colorscheme = "vesper"
+lvim.colorscheme = "terafox"
 
 vim.g.copilot_filetypes = { markdown = true } -- false by default
 vim.opt.conceallevel = 1                      -- required by the obsidian plugin
@@ -37,6 +37,31 @@ lvim.plugins = {
         -- priority = 1000,
         -- config = function()
         --   vim.cmd.colorscheme "catppuccin-mocha"
+        -- end
+    }, {
+    "rebelot/kanagawa.nvim",
+    },
+    {
+        "lervag/vimtex",
+        lazy = false, -- we don't want to lazy load VimTeX
+        -- tag = "v2.15", -- uncomment to pin to a specific release
+        init = function()
+            -- VimTeX configuration goes here, e.g.
+            vim.g.vimtex_view_method = "zathura"
+        end
+    },
+    {
+        "zenbones-theme/zenbones.nvim",
+        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+        -- In Vim, compat mode is turned on as Lush only works in Neovim.
+        dependencies = "rktjmp/lush.nvim",
+        lazy = false,
+        priority = 1000,
+        -- you can set set configuration options here
+        -- config = function()
+        --     vim.g.zenbones_darken_comments = 45
+        --     vim.cmd.colorscheme('zenbones')
         -- end
     },
     { 'datsfilipe/vesper.nvim' },
@@ -214,7 +239,7 @@ lvim.plugins = {
             -- Optional, configure additional syntax highlighting / extmarks.
             -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
             ui = {
-                enable = true,          -- set to false to disable all additional syntax features
+                enable = false,         -- set to false to disable all additional syntax features
                 update_debounce = 200,  -- update delay after a text change (in milliseconds)
                 max_file_length = 5000, -- disable UI features for files with more than this many lines
                 -- Define how various check-boxes are displayed
@@ -308,4 +333,13 @@ lvim.plugins = {
     },
     { "xiyaowong/transparent.nvim" },
     { "ellisonleao/glow.nvim",     config = true, cmd = "Glow" },
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
 }

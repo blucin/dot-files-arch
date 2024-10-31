@@ -10,8 +10,6 @@
  * @authorLink https://www.refact0r.dev
 */
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
-
 :root {
     --font: "JetBrains Mono"; /* UI font name. it must be installed on your system. */
     letter-spacing: -0.12ch; /* decreases letter spacing for better readability. */

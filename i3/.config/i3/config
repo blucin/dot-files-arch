@@ -53,10 +53,11 @@ set $secondary  #FF7EB6
 set $background #000000
 set $text       #FFFFFF
 
-# class                 border      backgr.       text            indicator
+# class                 border      backgr.       text            indicator     child border
 client.focused          $primary    $primary      $background     $secondary
-client.unfocused        $background $background   $text           $secondary
+client.unfocused        $background $background   $text           $secondary    $secondary
 client.focused_inactive $background $background   $text           $secondary
+# Note: the child border in 2nd row is the border color of an inactive window in non-stack mode
 
 # border and title bar
 title_align center

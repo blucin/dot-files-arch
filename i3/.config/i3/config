@@ -16,6 +16,14 @@ exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --rate 74.97
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# Kanata - a keyboard remapper
+# Prerequisite: 
+# sudo groupadd uinput
+# sudo usermod -aG uinput $USER
+# sudo usermod -aG input $USER
+exec --no-startup-id kanata -c ~/.config/kanata/config.kbd
+
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color=000000
@@ -49,6 +57,17 @@ set $text       #FFFFFF
 client.focused          $primary    $primary      $background     $secondary
 client.unfocused        $background $background   $text           $secondary
 client.focused_inactive $background $background   $text           $secondary
+
+# border and title bar
+title_align center
+default_border pixel 2
+
+# force cycle through title bars 
+# default title bar -> no decoration -> full decoration (titlebar + borders)
+bindsym $mod+shift+t exec i3-msg "border toggle" 
+
+# Show title bars in stacking/tabbed modes
+for_window [tiling] border pixel 2
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status

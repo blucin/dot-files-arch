@@ -60,14 +60,14 @@ client.focused_inactive $background $background   $text           $secondary
 
 # border and title bar
 title_align center
-default_border pixel 2
+default_border pixel 4
 
 # force cycle through title bars 
 # default title bar -> no decoration -> full decoration (titlebar + borders)
 bindsym $mod+shift+t exec i3-msg "border toggle" 
 
 # Show title bars in stacking/tabbed modes
-for_window [tiling] border pixel 2
+for_window [tiling] border pixel 3
 
 # Use pactl to adjust volume in PulseAudio.
 # set $refresh_i3status killall -SIGUSR1 i3status

@@ -1,0 +1,67 @@
+@import                          "../oxocarbon.rasi"
+@import                          "../fonts.rasi"
+
+* {
+    border-colour:               var(selected);
+    handle-colour:               var(selected);
+    background-colour:           var(background);
+    foreground-colour:           var(foreground);
+    alternate-background:        var(background-alt);
+    normal-background:           var(background);
+    normal-foreground:           var(foreground);
+    urgent-background:           var(urgent);
+    urgent-foreground:           var(background);
+    active-background:           var(active);
+    active-foreground:           var(background);
+    selected-normal-background:  var(selected);
+    selected-normal-foreground:  var(background);
+    selected-urgent-background:  var(active);
+    selected-urgent-foreground:  var(background);
+    selected-active-background:  var(urgent);
+    selected-active-foreground:  var(background);
+    alternate-normal-background: var(background);
+    alternate-normal-foreground: var(foreground);
+    alternate-urgent-background: var(urgent);
+    alternate-urgent-foreground: var(background);
+    alternate-active-background: var(active);
+    alternate-active-foreground: var(background);
+}
+
+window {
+    width: 20%;
+    padding: 5px;
+    border: 3px solid;
+    border-radius: 0px;
+    border-color: @selected;
+    background-color: @background-colour;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    children: [ prompt, entry ];
+    padding: 8px;
+    background-color: inherit;
+    text-color: @foreground-colour;
+}
+
+prompt {
+    padding: 0 8px;
+    background-color: inherit;
+    text-color: inherit;
+}
+
+entry {
+    padding: 0 8px;
+    background-color: inherit;
+    text-color: inherit;
+}
+
+listview {
+    lines: 0;
+    background-color: inherit;
+}
+
+element {
+    padding: 4px 8px;
+    background-color: inherit;
+}

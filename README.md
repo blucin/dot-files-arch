@@ -1,11 +1,18 @@
-# dot-files-arch
+# dot-files-arch (i3wm x11 + hyprland wayland)
 
-1. i3wm
-![homescreen-screenshot-i3wm](./assets/i3wm.png)
+**A X11 first dot files for Arch Linux. This repo contains my personal dot files for my Arch Linux setup. For wayland support you only need to stow 2 extra directories: `hypr` and `waybar`.**
 
-2. hyprland (new, wip)
+- [dot-files-arch (i3wm x11 + hyprland wayland)](#dot-files-arch-i3wm-x11--hyprland-wayland)
+  - [Screenshots](#screenshots)
+  - [Getting Started](#getting-started)
+  - [Setting GTK and Qt themes](#setting-gtk-and-qt-themes)
 
-![homescreen-screenshot-hyprland](./assets/hyprland.png)
+## Screenshots
+
+| WM | Screenshot |
+| -- | ---------- |
+| i3wm | ![homescreen-screenshot-i3wm](./assets/i3wm.png) |
+| hyprland (new, wip) | ![homescreen-screenshot-hyprland](./assets/hyprland.png) |
 
 ## Getting Started
 
@@ -53,6 +60,8 @@ chmod +x ~/.dotfiles/scripts/*
     stow alacritty
     ...
 ```
+> [!NOTE]
+> You can choose not to stow `hypr` and `waybar` if you don't want the hyprland config
 
 > [!NOTE]
 > This will automatically symlink the config files
@@ -87,5 +96,3 @@ XDG_CONFIG_HOME=/home/blucin/.config
 > [preferred]
 > default=gtk;wlr
 > ```
-
-

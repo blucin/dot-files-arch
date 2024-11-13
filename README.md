@@ -47,14 +47,14 @@ AUR:
 waypaper hyprshot swappy
 ```
 
-1. Make sure that the scripts under `~/.dotfiles/scripts/` are executable
+5. Make sure that the scripts under `~/.dotfiles/scripts/` are executable
 
 ```bash
 ls -l ~/.dotfiles/scripts/
 chmod +x ~/.dotfiles/scripts/*
 ```
 
-5. Stow all the dot files (Make sure you clone the repo in $HOME)
+6. Stow all the dot files (Make sure you clone the repo in $HOME)
 
 ```bash
     stow i3

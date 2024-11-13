@@ -62,11 +62,11 @@
 [urgency_normal]
     background = "#101010"
     foreground = "#f8f8f6"
-    frame_color = "#42BE65"
+    frame_color = "#82CFFF"
     timeout = 5
 
 [urgency_critical]
     background = "#101010"
     foreground = "#f8f8f6"
-    frame_color = "#E34234"
+    frame_color = "#FC4332"
     timeout = 120

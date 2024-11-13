@@ -2,7 +2,7 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
-lvim.colorscheme = "terafox"
+lvim.colorscheme = "duskfox"
 
 vim.g.copilot_filetypes = { markdown = true } -- false by default
 vim.opt.conceallevel = 1                      -- required by the obsidian plugin
@@ -11,35 +11,58 @@ vim.opt.relativenumber = true
 lvim.keys.normal_mode["|"] = ":vsplit<CR>"
 lvim.keys.normal_mode["-"] = ":split<CR>"
 
+lvim.builtin.which_key.mappings["t"] = {
+    name = "+Terminal",
+    v = { "<cmd>2ToggleTerm size=15 direction=vertical<cr>", "Split vertical" },
+    h = { "<cmd>2ToggleTerm size=15 direction=horizontal<cr>", "Split horizontal" },
+}
+lvim.builtin.terminal = {
+    shell = "/usr/bin/fish",
+}
+lvim.transparent_window = true
+
 -- prefer tabs over spaces of 4 character indents
 vim.opt.softtabstop = 0
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
--- lvim.transparent_window = true
-
--- lsp overrides (run :LvimCacheReset after adding an entry here)
--- 1. Use tinymist over typst-lsp
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "typst-lsp", "typst_lsp", "typst" })
--- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(
---   function(server)
---     return server ~= "tinymist"
---   end,
---   lvim.lsp.automatic_configuration.skipped_servers)
-
-
 lvim.plugins = {
     {
         "catppuccin/nvim",
-        lazy = false,
-        name = "catppuccin",
-        -- priority = 1000,
-        -- config = function()
-        --   vim.cmd.colorscheme "catppuccin-mocha"
-        -- end
-    }, {
-    "rebelot/kanagawa.nvim",
+    },
+    {
+        'akinsho/toggleterm.nvim',
+        init = function()
+            require("toggleterm").setup {}
+        end
+    },
+    {
+        "rmagatti/goto-preview",
+        event = "BufEnter",
+        config = function()
+            require('goto-preview').setup {
+                width = 120,             -- Width of the floating window
+                height = 25,             -- Height of the floating window
+                default_mappings = true, -- Bind default mappings
+                debug = false,           -- Print debug information
+                opacity = nil,           -- 0-100 opacity level of the floating window where 100 is fully transparent.
+                post_open_hook = nil,    -- A function taking two arguments, a buffer and a window to be ran as a hook.
+                -- default keybinds (don't uncomment, they are already in affect, read above)
+                -- nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>
+                -- nnoremap gpt <cmd>lua require('goto-preview').goto_preview_type_definition()<CR>
+                -- nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>
+                -- nnoremap gpD <cmd>lua require('goto-preview').goto_preview_declaration()<CR>
+                -- nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>
+                -- nnoremap gpr <cmd>lua require('goto-preview').goto_preview_references()<CR>
+            }
+        end
+    },
+    {
+        "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+        opts = {},
+        config = function(_, opts) require 'lsp_signature'.setup(opts) end
     },
     {
         "lervag/vimtex",

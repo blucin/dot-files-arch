@@ -28,23 +28,26 @@ cd ~/.dotfiles
     - `ttf-jetbrains-mono-nerd`
     - `ttf-icomoon-feather`
 
-3. Install `neovim` and [`lunarvim`](https://www.lunarvim.org/)
+3. Optional: Install `neovim` and [`lunarvim`](https://www.lunarvim.org/)
 
-3. Install necessary dependencies
-
-```
-stow alacritty btop fish fastfetch i3 polybar network-manager-applet zellij rofi qt5ct qt6ct lxappearance kvantum nwg-appearance kvantum-qt5 playerctl
-```
-> [!IMPORTANT] 
-> grab all the members of the package i3 `i3-wm`, `i3blocks`, `i3lock`, `i3status`
-
-Some additional packages that I use
+4. Install necessary dependencies (not an exhaustive list)
 
 ```
-pacman-contrib ufw lazygit thunar thunar-archive-plugin gvfs thunar-media-tags-plugin thunar-volman xarchiver zip keepassxc ristretto bat
+pacman:
+stow alacritty fish i3 polybar network-manager-applet rofi qt5ct qt6ct lxappearance kvantum nwg-appearance kvantum-qt5 playerctl xclip thunar thunar-archive-plugin gvfs thunar-media-tags-plugin thunar-volman xarchiver zip
 ```
 
-4. Make sure that the scripts under `~/.dotfiles/scripts/` are executable
+**for hyprland support, install this additional package**
+
+```
+pacman: 
+waybar hyprland wl-clipboard otf-font-awesome hyprpicker
+
+AUR:
+waypaper hyprshot swappy
+```
+
+1. Make sure that the scripts under `~/.dotfiles/scripts/` are executable
 
 ```bash
 ls -l ~/.dotfiles/scripts/

@@ -1,6 +1,11 @@
-# dot-files-arch (WIP)
+# dot-files-arch
 
-![homescreen-screenshot](./assets/screenshot.png)
+1. i3wm
+![homescreen-screenshot-i3wm](./assets/i3wm.png)
+
+2. hyprland (new, wip)
+
+![homescreen-screenshot-hyprland](./assets/hyprland.png)
 
 ## Getting Started
 
@@ -40,12 +45,6 @@ chmod +x ~/.dotfiles/scripts/*
 ```
 
 5. Stow all the dot files (Make sure you clone the repo in $HOME)
-
-```bash
-    stow .
-```
-
-**or** manually add each configuration as required
 
 ```bash
     stow i3

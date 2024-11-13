@@ -9,7 +9,7 @@
 # -----------------------------------------------------------------------
 set $mod Mod4
 set $explorer thunar
-set $term alacritty
+set $term kitty
 set $browser io.github.zen_browser.zen
 
 

@@ -1,0 +1,64 @@
+@import "oxocarbon.css";
+
+* {
+    font-family: 'Jetbrains Mono Nerd Font';
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background-color: @background;
+}
+
+/* workspace styles */
+#workspaces button {
+    padding: 0 6px;
+    color: @foreground;
+    border: none;
+    border-radius: 0px;
+}
+#workspaces button:hover {
+    color: @background;
+    background: @blue;
+}
+#workspaces button.focused {
+    color: @background;
+    background-color: @blue;
+}
+#workspaces button.active {
+    color: @background;
+    background-color: @blue;
+}
+#workspaces button.urgent {
+    color: @background;
+    background-color: @red;
+}
+
+/* modules */
+#clock,
+#cpu,
+#pulseaudio, 
+#memory {
+    color: @foreground;
+    background-color: @background;
+}
+
+#tray {
+    padding-right: 9px;
+}
+
+/* tooltip e.g. calendar */
+tooltip {
+    background-color: @background;
+	opacity: 1;
+}
+
+/* separator styling */
+#custom-separator {
+  color: @blue;
+  margin: 0 8px;
+}

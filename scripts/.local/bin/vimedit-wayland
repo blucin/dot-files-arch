@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Create a temporary file
+tmp_file=$(mktemp)
+
+# Open Alacritty with Neovim in insert mode, and set spell checking enabled
+alacritty --class="floating" -e $SHELL -lc "sleep 0.1 && nvim -c startinsert -c 'setlocal spell' ${tmp_file}"
+
+# If the file exists and is not empty, copy its contents to the Wayland clipboard
+if [ -s "$tmp_file" ]; then
+    wl-copy < "$tmp_file"
+fi
+
+# Clean up the temporary file
+rm -f "$tmp_file"

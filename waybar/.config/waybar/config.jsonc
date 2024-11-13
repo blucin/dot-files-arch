@@ -1,0 +1,80 @@
+{
+    "spacing": 0,
+    "height": 30,
+    "modules-left": [
+        "hyprland/workspaces",
+    ],
+    "modules-right": [
+        "clock",
+        "custom/separator",
+        "pulseaudio",
+        "custom/separator",
+        "memory",
+        "custom/separator",
+        "cpu",
+        "custom/separator",
+        "tray"
+    ],
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1:ter",
+            "2": "2:www",
+            "3": "3:txt",
+        },
+    },
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "MUTE",
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+    "memory": {
+        "interval": 5,
+        "format": "MEM {}%",
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "CPU {}%",
+        "max-length": 10
+    },
+    "clock": {
+        "format": "{:%I:%M %p <span color='#82CFFF'>/</span> %d-%b-%Y %a (%m/12)}",
+        "format-alt": "{:%I:%M %p <span color='#82CFFF'>/</span> %a, %d-%b-%Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ff7eb6'><b>{}</b></span>",
+                "days": "<span color='#fefefe'><b>{}</b></span>",
+                "weeks": "<span color='#82cfff'><b>W{}</b></span>",
+                "weekdays": "<span color='#e6b99d'><b>{}</b></span>",
+                "today": "<span background='#42be65' color='#101010'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "tz_up",
+            "on-scroll-down": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "custom/separator": {
+        "format": "/",
+        "interval": "once",
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 5
+    },
+}

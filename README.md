@@ -41,10 +41,10 @@ stow alacritty fish i3 polybar network-manager-applet rofi qt5ct qt6ct lxappeara
 
 ```
 pacman: 
-waybar hyprland wl-clipboard otf-font-awesome hyprpicker
+waybar hyprland wl-clipboard otf-font-awesome hyprpicker grim slurp
 
 AUR:
-waypaper hyprshot swappy
+waypaper hyprshot swappy xdg-desktop-portal-hyprland-git
 ```
 
 5. Make sure that the scripts under `~/.dotfiles/scripts/` are executable

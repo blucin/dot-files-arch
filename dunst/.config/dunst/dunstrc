@@ -2,9 +2,9 @@
     monitor = 0
     follow = none
     width = 300
-    height = 350
+    height = 100
     origin = top-right
-    offset = 10x60
+    offset = 12x40
     scale = 0
     notification_limit = 0
     progress_bar = true

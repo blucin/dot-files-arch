@@ -90,7 +90,7 @@ client.focused_inactive $background $background   $text           $secondary
 # Border and title bar
 # -----------------------------------------------------------------------
 title_align center
-default_border pixel 4
+default_border pixel 3
 # Show title bars in stacking/tabbed modes
 for_window [tiling] border pixel 3
 # force cycle through title bars 

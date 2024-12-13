@@ -7,19 +7,35 @@ vim.opt.relativenumber = true
 lvim.keys.normal_mode["|"] = ":vsplit<CR>"
 lvim.keys.normal_mode["-"] = ":split<CR>"
 
+-- TODO Fix all the mess
+
 lvim.builtin.which_key.mappings["t"] = {
     name = "+Terminal",
     v = { "<cmd>2ToggleTerm size=15 direction=vertical<cr>", "Split vertical" },
     h = { "<cmd>2ToggleTerm size=15 direction=horizontal<cr>", "Split horizontal" },
+
+    -- Telescope plugins
+    p = { "<cmd>Telescope projects<cr>", "Projects" },
+    f = { "<cmd>Telescope frecency<cr>", "Frecency" },
 }
 lvim.builtin.which_key.mappings["n"] = {
     name = "+VisualWhitespace",
     w = { "<cmd>lua require('visual-whitespace').toggle()<cr>", "Toggle" },
 }
+-- lvim.builtin.which_key.mappings["<character>"] = {
+--     name = "+Session",
+--     s = { "<cmd>SessionSave<cr>", "Save" },
+--     l = { "<cmd>SessionLoad<cr>", "Load" },
+-- }
 
 lvim.builtin.terminal = {
     shell = "/usr/bin/fish",
 }
+lvim.builtin.telescope.on_config_done = function(telescope)
+    pcall(telescope.load_extension, "frecency")
+    pcall(telescope.load_extension, "project")
+    -- any other extensions loading
+end
 lvim.transparent_window = false
 
 -- tabline
@@ -52,6 +68,17 @@ vim.opt.shiftwidth = 4
 lvim.plugins = {
     {
         "catppuccin/nvim",
+    },
+    {
+        "nvim-telescope/telescope-frecency.nvim",
+    },
+    {
+        "nvim-telescope/telescope-project.nvim",
+        event = "BufWinEnter",
+    },
+    {
+        "sphamba/smear-cursor.nvim",
+        opts = {},
     },
     {
         'akinsho/toggleterm.nvim',

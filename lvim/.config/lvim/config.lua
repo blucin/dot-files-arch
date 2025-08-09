@@ -77,7 +77,7 @@ lvim.plugins = {
         event = "BufWinEnter",
     },
     {
-        "sphamba/smear-cursor.nvim",
+        "mvllow/modes.nvim",
         opts = {},
     },
     {

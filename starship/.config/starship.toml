@@ -11,18 +11,21 @@ $python\
 $character"""
 
 [username]
-format = '[ $user](bold #99ffe4)@'
+# format = '[ $user](bold #99ffe4)@'
+format = ' [$user](bold bright-yellow)@'
 show_always = true
 
 [hostname]
-format = '[$hostname](#ffc799)'
+# format = '[$hostname](#ffc799)'
+format = '[$hostname](bold bright-white)'
 ssh_only = false
 
 [directory]
-format = ' in [$path](bold #b9aeda) '
+# format = ' in [$path](bold #b9aeda) '
+format = ' in $path '
 
 [character]
-success_symbol = "[ ●](purple)"
+success_symbol = "[ ●](bold purple)"
 error_symbol = "[ ●](red)"
 vimcmd_symbol = "[ ●](green)"
 
